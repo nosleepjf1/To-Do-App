@@ -1,0 +1,68 @@
+.container{
+    margin-top: 30px;
+    max-width: 800px;
+    background: url("ToDoPic.jpg");
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #492017;
+}
+
+.red {
+    border: 1px solid darkred;
+}
+.green{
+    border: 1px solid lawngreen;
+}
+
+.routeButton{
+   float: right;
+    font-size: 1.5em;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    background: cornflowerblue;
+}
+
+.somePadding {
+    margin: 100px 10px 50px 10px;
+}
+
+.inputBox {
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #492017;
+}
+
+.aboutText {
+    color: #492017;
+    margin: 0;
+    padding: 30px;
+    background: rgba(30, 30, 30, .1);
+}
+
+#pushDown {
+ margin-bottom: 10px;
+}
+
+
+@keyframes animateleave {
+    from {top: 12%; left: 5%;}
+    to {top: 12%; left: 105%;}
+}
+
+@keyframes animateenter {
+    from {top: 12%; left: -105%;}
+    to {top: 12%; left: 5%;}
+}
+
+.animation.ng-enter {
+    position: absolute;
+    width: 100%;
+    animation: animateenter .3s linear;
+}
+
+.animation.ng-leave {
+    position: absolute;
+    width: 70%;
+    animation: animateleave .3s linear;
+}

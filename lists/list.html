@@ -1,0 +1,16 @@
+<div ng-show="!$ctrl.currentList">
+    <input class="inputBox" type="text" ng-class="$ctrl.text == '' ? 'red' : 'green'" ng-model="$ctrl.text" required/><span ng-show="$ctrl.text == ''"> New List</span>
+
+    <button class="btn btn-primary" ng-hide="$ctrl.text == ''" ng-click="$ctrl.addList()">create list</button>
+    <p ng-show="$ctrl.text == ''">Please type a name for your new list</p>
+
+    <div ng-repeat="list in $ctrl.lists">
+
+        <h2 ng-click="$ctrl.selectedList(list)">{{list.name | upper }} </h2>
+        <!--<button class="btn btn-info" ng-click="$ctrl.editClicked = !$ctrl.editClicked" ng-show="!$ctrl.editClicked">edit</button>-->
+        <input ng-show="$ctrl.editClicked" type="text" ng-model="$ctrl.editText"/>
+    </div>
+    <a ui-sref="about" class="routeButton">about page</a>
+</div>
+
+<task-component current-list="$ctrl.currentList"></task-component>

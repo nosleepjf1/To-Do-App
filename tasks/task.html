@@ -1,0 +1,20 @@
+
+
+<div ng-show="$ctrl.currentList">
+    <h1>current list: {{ $ctrl.currentList.name }}</h1>
+
+    <input type="text" ng-class="$ctrl.text == '' ? 'red' : 'green'" ng-model="$ctrl.text"/>
+
+    <button class="btn btn-primary" ng-hide="$ctrl.text == ''" ng-click="$ctrl.addTask()">create task</button>
+    <!--<div id="mybutton"></div>-->
+    <button class="btn btn-sm btn-danger" ng-click="$ctrl.deleteFinished($ctrl.currentList);">Delete Finished Task</button>
+
+
+    <div ng-repeat="task in $ctrl.currentList.todos">
+        <input type="checkbox" ng-model="task.done" ng-click="$ctrl.clicked();" />
+        <span>{{ task.todo | upper }}</span>
+        <button class="btn btn-danger" ng-click="$ctrl.deleteTask(task);">Delete Task</button>
+    </div>
+
+    <button class="routeButton" ng-click="$ctrl.goBack();">Back to Lists</button>
+</div>
